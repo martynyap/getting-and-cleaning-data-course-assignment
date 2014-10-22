@@ -14,11 +14,11 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 You should create one R script called run_Analysis.R that does the following.  that does the following.
 
-# Step 1: Merges the training and the test sets to create one data set.
-# Step 2:Extracts only the measurements on the mean and standard deviation for each measurement. 
-# Step 3: Uses descriptive activity names to name the activities in the data set.
-# Step 4: Appropriately labels the data set with descriptive activity names. 
-# Step 5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+* Step 1: Merges the training and the test sets to create one data set.
+* Step 2:Extracts only the measurements on the mean and standard deviation for each measurement. 
+* Step 3: Uses descriptive activity names to name the activities in the data set.
+* Step 4: Appropriately labels the data set with descriptive activity names. 
+* Step 5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 Good luck!
 
@@ -30,10 +30,10 @@ Good luck!
 
 ## How to create the tidy data set
 
-# Step 1. Download [compressed raw data](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
-# Step 2. Unzip raw data and copy the directory `UCI HAR Dataset` to your RStudio working directory.
-# Step 3. Download the 'run_Analysis.R' file and copy to your RStudio working directory.
-# Step 3. Open RStudio.
-# Step 4. type "source('run_Analysis.R')".
+* Step 1. Download [compressed raw data](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+* Step 2. Unzip raw data and copy the directory `UCI HAR Dataset` to your RStudio working directory.
+* Step 3. Download the 'run_Analysis.R' file and copy to your RStudio working directory.
+* Step 3. Open RStudio.
+* Step 4. type "source('run_Analysis.R')".
 
 In the RStudio working directory, a `savg_by_act_sub.txt` is written with the tidy data set.
