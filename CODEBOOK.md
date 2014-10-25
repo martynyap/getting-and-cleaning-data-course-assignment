@@ -1,7 +1,7 @@
 Getting and Cleaning Data Course Project
 ========================================
 
-* The variables were renamed according to following rules:
+The variables were renamed according to following rules:
 
 * 'All lower case when possible' - The variable names were not converted to lower case, since it would make them unreadable.
 * 'Descriptive (Diagnosis versus Dx) - The variable names are already descriptive.
