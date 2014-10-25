@@ -1,12 +1,12 @@
-+Getting and Cleaning Data Course Project
-+========================================
-+
-+To satisfy the requirements above, the following replacements were performed:
-+*Replace -mean with Mean
-+*Replace -std with Std
-+*Remove characters -()
-+*Replace fBodyBody with fBody
-+
+Getting and Cleaning Data Course Project
+========================================
+
+To satisfy the requirements above, the following replacements were performed:
+*Replace -mean with Mean
+*Replace -std with Std
+*Remove characters -()
+*Replace fBodyBody with fBody
+
 Raw data set | Tidy data set
 --- | --- 
 subject	| Subject
