@@ -1,3 +1,6 @@
+#Required function(s)
+require(plyr)
+
 # Step 1. Merges the training and the test sets to create one data set.
 
 # 1.1 Loading the flat files - read.table()
@@ -36,25 +39,12 @@ sdata_mean_std <- sdata_mean_std[,-1]
 
 # Step 4. Appropriately labels the data set with descriptive names.
 
-# 4.1 Fixing character vectors - gsub() - Remove parentheses
-names(sdata_mean_std) <- gsub('\\(|\\)',"",names(sdata_mean_std), perl = TRUE)
-
-# 4.2 Make syntactically valid names out of character vectors - make.names()
-names(sdata_mean_std) <- make.names(names(sdata_mean_std))
-
-# 4.3 Fixing character vectors - gsub() - Make explicit names
-names(sdata_mean_std) <- gsub('Acc',"Acceleration",names(sdata_mean_std))
-names(sdata_mean_std) <- gsub('GyroJerk',"AngularAcceleration",names(sdata_mean_std))
-names(sdata_mean_std) <- gsub('Gyro',"AngularSpeed",names(sdata_mean_std))
-names(sdata_mean_std) <- gsub('Mag',"Magnitude",names(sdata_mean_std))
-names(sdata_mean_std) <- gsub('^t',"TimeDomain.",names(sdata_mean_std))
-names(sdata_mean_std) <- gsub('^f',"Frequencydomain.",names(sdata_mean_std))
-names(sdata_mean_std) <- gsub('\\.mean',".Mean",names(sdata_mean_std))
-names(sdata_mean_std) <- gsub('\\.std',".Standarddeviation",names(sdata_mean_std))
-names(sdata_mean_std) <- gsub('Freq\\.',"Frequency.",names(sdata_mean_std))
-names(sdata_mean_std) <- gsub('Freq$',"Frequency",names(sdata_mean_std))
+# 4.1 Fixing character vectors - gsub() - Make explicit names
+names(sdata_mean_std) <- gsub('[()-]',"",names(sdata_mean_std))
+names(sdata_mean_std) <- gsub('BodyBody',"Body",names(sdata_mean_std))
+names(sdata_mean_std) <- gsub('.mean',"Mean",names(sdata_mean_std))
+names(sdata_mean_std) <- gsub('.std',"Std",names(sdata_mean_std))
 
 # Step 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-require(plyr)
 savg_by_act_sub = ddply(sdata_mean_std, c("Subject","Activity"), numcolwise(mean))
-write.table(savg_by_act_sub, row.name = FALSE, file = "savg_by_act_sub.txt")
+write.table(savg_by_act_sub, row.name = FALSE, file = "tidydata.txt")
